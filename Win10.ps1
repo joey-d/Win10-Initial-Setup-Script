@@ -83,6 +83,12 @@ $preset = @(
 	"DisableNewAppPrompt",          # "EnableNewAppPrompt",
 	"EnableF8BootMenu",             # "DisableF8BootMenu",
 
+	Write-Host "Custom Stuff..."
+	Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowSyncProviderNotifications" -Type DWord -Value 0
+	Set-ItemProperty -Path "HKCU:\Control Panel\Mouse" -Name "MouseSpeed" -Type DWord -Value 0
+	Set-ItemProperty -Path "HKCU:\Control Panel\Keyboard" -Name "KeyboardDelay" -Type DWord -Value 0
+	
+	
 	### Auxiliary Functions ###
 	"WaitForKey",
 	"Restart"

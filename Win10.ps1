@@ -104,6 +104,13 @@ Function CustomStuff {
 	Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "ShowSyncProviderNotifications" -Type DWord -Value 0
 	Set-ItemProperty -Path "HKCU:\Control Panel\Mouse" -Name "MouseSpeed" -Type DWord -Value 0
 	Set-ItemProperty -Path "HKCU:\Control Panel\Keyboard" -Name "KeyboardDelay" -Type DWord -Value 0
+	
+	#Custom performance
+	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" -Name "VisualFXSetting" -Type DWord -Value 3
+	
+	#Allow remote connections
+	Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\ControlTerminal Server" -Name "fAllowToGetHelp" -Type DWord -Value 0
+	Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\ControlTerminal Server" -Name "fDenyTSConnections" -Type DWord -Value 1
 }
 
 ##########
